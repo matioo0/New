@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import UsersScreen from '../screens/UsersScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -21,6 +22,22 @@ HomeStack.navigationOptions = {
           ? `ios-information-circle${focused ? '' : '-outline'}`
           : 'md-information-circle'
       }
+    />
+  ),
+};
+const UserStack = createStackNavigator({
+  User: UsersScreen.js
+});
+
+UserStack.navigationOptions = {
+  tabBarLabel: 'User',
+  tabBarIcon: ({focused}) => (
+    <TabBarIcon
+    focused={focused}
+    name={
+      Platform.OS === 'ios'
+      ? 'ios-user'  : 'md-user'
+    }
     />
   ),
 };
@@ -57,4 +74,5 @@ export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+  UserStack,
 });
