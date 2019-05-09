@@ -26,7 +26,7 @@ HomeStack.navigationOptions = {
   ),
 };
 const UserStack = createStackNavigator({
-  User: UsersScreen.js
+  User: UsersScreen,
 });
 
 UserStack.navigationOptions = {
@@ -36,7 +36,7 @@ UserStack.navigationOptions = {
     focused={focused}
     name={
       Platform.OS === 'ios'
-      ? 'ios-user'  : 'md-user'
+      ? 'ios-link'  : 'md-link'
     }
     />
   ),

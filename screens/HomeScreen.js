@@ -21,7 +21,15 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          
+
+        <View style={{flex: 1, flexDirection: 'column'}}>
+        <View style={{width: 50, height: 50, backgroundColor: 'darkred'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'lightgreen'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'gold'}} />
+      </View>
+
+
+
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}

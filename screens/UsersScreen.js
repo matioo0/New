@@ -4,6 +4,7 @@ import { AppRegistry, FlatList, StyleSheet, Text, View } from 'react-native';
 export default class UsersScreen extends Component {
   render() {
     return (
+      
       <View style={styles.container}>
         <FlatList
           data={[

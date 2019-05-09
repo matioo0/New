@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, StyleSheet, Linking } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 
 export default class LinksScreen extends React.Component {
@@ -7,21 +7,29 @@ export default class LinksScreen extends React.Component {
     title: 'Links',
   };
 
-  render() {
-    return (
-      <ScrollView style={styles.container}>
-        {/* Go ahead and delete ExpoLinksView and replace it with your
-           * content, we just wanted to provide you with some helpful links */}
-        <ExpoLinksView />
-      </ScrollView>
-    );
+  componentDidMount() {
+    Linking.getInitialURL().then((url) => {
+      if (url) {
+        console.log('Initial url is: ' + url);
+      }
+    }).catch(err => console.error('An error occurred', err));
   }
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+componentDidMount() {
+  Linking.addEventListener('https://www.instagram.com/mateusz_krainski/', this._handleOpenURL);
+}
+componentWillUnmount() {
+  Linking.removeEventListener('https://www.instagram.com/mateusz_krainski/', this._handleOpenURL);
+}
+_handleOpenURL(event) {
+  console.log(event.url);
+  Linking.openURL(url).catch((err) => console.error('An error occurred', err));}
+
+  conststyles = StyleSheet.create({
+    url: {
+      flex: 1,
     paddingTop: 15,
     backgroundColor: '#fff',
   },
-});
+},
+};
