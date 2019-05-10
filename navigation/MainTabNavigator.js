@@ -3,76 +3,96 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import AddInvoiceScreen from '../screens/AddInvoiceScreen';
+import ClientsScreen from '../screens/ClientsScreen';
+import HistoryScreen from '../screens/HistoryScreen';
+import ProductsScreen from '../screens/ProductsScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-import UsersScreen from '../screens/UsersScreen';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+const HistoryStack = createStackNavigator({
+  History: HistoryScreen,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+HistoryStack.navigationOptions = {
+  tabBarLabel: 'Historia',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-bookmarks`
+          : 'md-bookmarks'
       }
     />
   ),
 };
-const UserStack = createStackNavigator({
-  User: UsersScreen,
+
+const AddInvoiceStack = createStackNavigator({
+  AddInvoice: AddInvoiceScreen,
 });
 
-UserStack.navigationOptions = {
-  tabBarLabel: 'User',
-  tabBarIcon: ({focused}) => (
-    <TabBarIcon
-    focused={focused}
-    name={
-      Platform.OS === 'ios'
-      ? 'ios-link'  : 'md-link'
-    }
-    />
-  ),
-};
-
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
-});
-
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+AddInvoiceStack.navigationOptions = {
+  tabBarLabel: ' ',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-add`
+          : 'md-plus'
+      }
     />
   ),
 };
-
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-});
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-    />
-  ),
-};
+// const UserStack = createStackNavigator({
+//   User: UsersScreen,
+// });
+//
+// UserStack.navigationOptions = {
+//   tabBarLabel: 'User',
+//   tabBarIcon: ({focused}) => (
+//     <TabBarIcon
+//     focused={focused}
+//     name={
+//       Platform.OS === 'ios'
+//       ? 'ios-link'  : 'md-link'
+//     }
+//     />
+//   ),
+// };
+//
+// const LinksStack = createStackNavigator({
+//   Links: LinksScreen,
+// });
+//
+// LinksStack.navigationOptions = {
+//   tabBarLabel: 'Links',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+//     />
+//   ),
+// };
+//
+// const SettingsStack = createStackNavigator({
+//   Settings: SettingsScreen,
+// });
+//
+// SettingsStack.navigationOptions = {
+//   tabBarLabel: 'Settings',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+//     />
+//   ),
+// };
 
 export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
-  UserStack,
+  HistoryStack,
+  ClientsScreen,
+  AddInvoiceStack,
+  ProductsScreen,
+  SettingsScreen
 });
