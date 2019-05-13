@@ -44,55 +44,66 @@ AddInvoiceStack.navigationOptions = {
     />
   ),
 };
-// const UserStack = createStackNavigator({
-//   User: UsersScreen,
-// });
-//
-// UserStack.navigationOptions = {
-//   tabBarLabel: 'User',
-//   tabBarIcon: ({focused}) => (
-//     <TabBarIcon
-//     focused={focused}
-//     name={
-//       Platform.OS === 'ios'
-//       ? 'ios-link'  : 'md-link'
-//     }
-//     />
-//   ),
-// };
-//
-// const LinksStack = createStackNavigator({
-//   Links: LinksScreen,
-// });
-//
-// LinksStack.navigationOptions = {
-//   tabBarLabel: 'Links',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
-//     />
-//   ),
-// };
-//
-// const SettingsStack = createStackNavigator({
-//   Settings: SettingsScreen,
-// });
-//
-// SettingsStack.navigationOptions = {
-//   tabBarLabel: 'Settings',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
-//     />
-//   ),
-// };
+
+const ClientsStack = createStackNavigator({
+  Clients: ClientsScreen,
+});
+
+ ClientsStack.navigationOptions = {
+  tabBarLabel: 'Klienci',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-man`
+          : 'md-idcard'
+      }
+    />
+  ),
+};
+
+const ProductsStack = createStackNavigator({
+  Products: ProductsScreen,
+});
+
+ProductsStack.navigationOptions = {
+  tabBarLabel: 'Usługi',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-swap`
+          : 'md-bookmarks'
+      }
+    />
+  ),
+};
+
+const SettingsStack = createStackNavigator({
+  Settings: SettingsScreen,
+});
+
+SettingsStack.navigationOptions = {
+  tabBarLabel: 'Ustawienia',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-settings`
+          : 'md-bookmarks'
+      }
+    />
+  ),
+};
+
 
 export default createBottomTabNavigator({
   HistoryStack,
-  ClientsScreen,
+  ClientsStack,
   AddInvoiceStack,
-  ProductsScreen,
-  SettingsScreen
+  ProductsStack,
+  SettingsStack
 });

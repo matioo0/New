@@ -6,11 +6,12 @@ import t from 'tcomb-form-native'; // 0.6.9
 const Form = t.form.Form;
 
 const Client = t.struct({
-  name: t.String,
-  nip: t.String,
-  street: t.String,
-  city: t.String,
-  postCode: t.String
+  Imie: t.String,
+  Nazwisko: t.String,
+  Nip: t.String,
+  Ulica: t.String,
+  Miasto: t.String,
+  Kod_Pocztowy: t.String
 });
 
 export default class AddInvoiceScreen extends React.Component {
