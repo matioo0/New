@@ -44,6 +44,24 @@ AddInvoiceStack.navigationOptions = {
     />
   ),
 };
+
+const ClientsStack = createStackNavigator({
+  Clients: ClientsScreen,
+});
+
+ClientsStack.navigationOptions = {
+  tabBarLabel: 'Klienci',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={
+        Platform.OS === 'ios'
+          ? `ios-man`
+          : 'md-plus'
+      }
+    />
+  ),
+};
 // const UserStack = createStackNavigator({
 //   User: UsersScreen,
 // });
@@ -91,7 +109,7 @@ AddInvoiceStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   HistoryStack,
-  ClientsScreen,
+  ClientsStack,
   AddInvoiceStack,
   ProductsScreen,
   SettingsScreen
