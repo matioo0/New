@@ -49,7 +49,11 @@ const ClientsStack = createStackNavigator({
   Clients: ClientsScreen,
 });
 
+<<<<<<< HEAD
  ClientsStack.navigationOptions = {
+=======
+ClientsStack.navigationOptions = {
+>>>>>>> 7ca60aa124974c565f47d92793c00983d4b0cce7
   tabBarLabel: 'Klienci',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -57,11 +61,16 @@ const ClientsStack = createStackNavigator({
       name={
         Platform.OS === 'ios'
           ? `ios-man`
+<<<<<<< HEAD
           : 'md-idcard'
+=======
+          : 'md-plus'
+>>>>>>> 7ca60aa124974c565f47d92793c00983d4b0cce7
       }
     />
   ),
 };
+<<<<<<< HEAD
 
 const ProductsStack = createStackNavigator({
   Products: ProductsScreen,
@@ -99,6 +108,52 @@ SettingsStack.navigationOptions = {
   ),
 };
 
+=======
+// const UserStack = createStackNavigator({
+//   User: UsersScreen,
+// });
+//
+// UserStack.navigationOptions = {
+//   tabBarLabel: 'User',
+//   tabBarIcon: ({focused}) => (
+//     <TabBarIcon
+//     focused={focused}
+//     name={
+//       Platform.OS === 'ios'
+//       ? 'ios-link'  : 'md-link'
+//     }
+//     />
+//   ),
+// };
+//
+// const LinksStack = createStackNavigator({
+//   Links: LinksScreen,
+// });
+//
+// LinksStack.navigationOptions = {
+//   tabBarLabel: 'Links',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+//     />
+//   ),
+// };
+//
+// const SettingsStack = createStackNavigator({
+//   Settings: SettingsScreen,
+// });
+//
+// SettingsStack.navigationOptions = {
+//   tabBarLabel: 'Settings',
+//   tabBarIcon: ({ focused }) => (
+//     <TabBarIcon
+//       focused={focused}
+//       name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+//     />
+//   ),
+// };
+>>>>>>> 7ca60aa124974c565f47d92793c00983d4b0cce7
 
 export default createBottomTabNavigator({
   HistoryStack,

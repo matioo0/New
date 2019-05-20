@@ -55,12 +55,20 @@ export default class ClientsScreen extends React.Component {
   };
 
   titleConfig = {
+<<<<<<< HEAD
     title: 'Formularz Klienta',
+=======
+    title: 'Hello, world',
+>>>>>>> 7ca60aa124974c565f47d92793c00983d4b0cce7
   };
 
   handleSubmit = () => {
     const value = this._form.getValue(); // use that ref to get the form value
+<<<<<<< HEAD
     fetch('http://192.168.100.87:5000/users', {
+=======
+    fetch('http://192.168.8.104:5000/users', {
+>>>>>>> 7ca60aa124974c565f47d92793c00983d4b0cce7
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -93,7 +101,11 @@ export default class ClientsScreen extends React.Component {
   }
 
   fetchClientsList() {
+<<<<<<< HEAD
     fetch('http://192.168.100.87:5000/users')
+=======
+    fetch('http://192.168.8.104:5000/users')
+>>>>>>> 7ca60aa124974c565f47d92793c00983d4b0cce7
     .then(response => response.json())
     .then(data => data[0])
     .then(data => this.setState({ data }));
