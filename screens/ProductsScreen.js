@@ -6,11 +6,11 @@ import t from 'tcomb-form-native'; // 0.6.9
 const Form = t.form.Form;
 
 const Client = t.struct({
-  Nazwa_Produktu: t.String,
-  Ilość: t.String,
-  Data: t.String,
-  Miejscowość: t.String,
-  Cena: t.String
+  Name_of_product: t.String,
+  amount: t.String,
+  Date: t.String,
+  City: t.String,
+  Price: t.String
 });
 
 export default class ProductsScreen extends React.Component {

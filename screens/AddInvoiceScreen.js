@@ -6,12 +6,11 @@ import t from 'tcomb-form-native'; // 0.6.9
 const Form = t.form.Form;
 
 const Client = t.struct({
-  Imie: t.String,
-  Nazwisko: t.String,
-  Nip: t.String,
-  Ulica: t.String,
-  Miasto: t.String,
-  Kod_Pocztowy: t.String
+  name: t.String,
+  nip: t.String,
+  street: t.String,
+  city: t.String,
+  postCode: t.String
 });
 
 export default class AddInvoiceScreen extends React.Component {
@@ -22,6 +21,14 @@ export default class AddInvoiceScreen extends React.Component {
 
   handleSubmit = () => {
     const value = this._form.getValue(); // use that ref to get the form value
+    fetch('http://192.168.8.104:5000/users', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(value)
+    })
     console.log('value: ', value);
   }
 
