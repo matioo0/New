@@ -4,7 +4,7 @@ import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elemen
 import t from 'tcomb-form-native'; // 0.6.9
 
 const Form = t.form.Form;
-
+//sssssssssssssssssssssssss   sdsds
 const Client = t.struct({
   name: t.String,
   nip: t.String,
@@ -18,7 +18,7 @@ export default class AddInvoiceScreen extends React.Component {
   static navigationOptions = {
     title: 'Dodaj Fakturę',
   };
-
+//dfdfdf
   handleSubmit = () => {
     const value = this._form.getValue(); // use that ref to get the form value
     fetch('http://192.168.8.104:5000/users', {
@@ -46,8 +46,7 @@ export default class AddInvoiceScreen extends React.Component {
         </ScrollView>
       </View>
     )
-  }
-
+    }
 }
 
 const styles = StyleSheet.create({

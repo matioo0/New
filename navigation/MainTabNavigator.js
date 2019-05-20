@@ -90,6 +90,7 @@ ProductsStack.navigationOptions = {
   ),
 };
 
+
 const SettingsStack = createStackNavigator({
   Settings: SettingsScreen,
 });

@@ -6,7 +6,7 @@ import SelectItemModal from './SelectItemModal';
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements';
 import t from 'tcomb-form-native'; // 0.6.9
 
-
+//ddddddddddddddddddddddddddddddddd
 const Form = t.form.Form;
 
 const Client = t.struct({
